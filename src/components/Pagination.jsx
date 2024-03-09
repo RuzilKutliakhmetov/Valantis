@@ -15,27 +15,27 @@ const Pagination = ({ page, limit, total, siblings, onPageChange }) => {
     <div className="col-4">
       <nav aria-label="Page navigation example">
         <ul className="pagination m-0">
-          <li className="page-item"><button className="page-link btn-light" onClick={() => onPageChange("&laquo;")}><span aria-hidden="true">&laquo;</span></button></li>
-          <li className="page-item"><button className="page-link btn-light" onClick={() => onPageChange("&lsaquo;")}><span aria-hidden="true">&lsaquo;</span></button></li>
+          <li className="page-item"><a className="page-link text-bg-light" onClick={() => onPageChange("&laquo;")} href="#"><span aria-hidden="true">&laquo;</span></a></li>
+          <li className="page-item"><a className="page-link text-bg-light" onClick={() => onPageChange("&lsaquo;")} href="#"><span aria-hidden="true">&lsaquo;</span></a></li>
           {
             pageNumbers2.map(number => {
               if (number === page) {
                 return (
                   <li className="page-item active" key={number}>
-                    <button className="page-link btn-light" onClick={() => onPageChange(number)}>{number}</button>
+                    <a className="page-link text-bg-light" onClick={() => onPageChange(number)} href="#">{number}</a>
                   </li>
                 )
               } else {
                 return (
                   <li className="page-item" key={number}>
-                    <button className="page-link btn-light" onClick={() => onPageChange(number)}>{number}</button>
+                    <a className="page-link text-bg-light" onClick={() => onPageChange(number)} href="#">{number}</a>
                   </li>
                 )
               }
             })
           }
-          <li className="page-item"><button className="page-link btn-light" onClick={() => onPageChange("&rsaquo;")}><span aria-hidden="true">&rsaquo;</span></button></li>
-          <li className="page-item"><button className="page-link btn-light" onClick={() => onPageChange("&raquo;")}><span aria-hidden="true">&raquo;</span></button></li>
+          <li className="page-item"><a className="page-link text-bg-light" onClick={() => onPageChange("&rsaquo;")} href="#"><span aria-hidden="true">&rsaquo;</span></a></li>
+          <li className="page-item"><a className="page-link text-bg-light" onClick={() => onPageChange("&raquo;")} href="#"><span aria-hidden="true">&raquo;</span></a></li>
         </ul>
       </nav>
 

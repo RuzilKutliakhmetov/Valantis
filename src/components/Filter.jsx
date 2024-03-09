@@ -90,17 +90,20 @@ const Filter = ({ apiPassword, hashedPassword, setproductIDs, setIsLoaded, setEr
   };
 
   const clearFilters = () => {
-    setIsLoaded(false);
-    setproductIDs(allProductsIDs);
-    setInputSearchByName('');
-    setInputSearchByPrice('');
-    setInputSearchByBrand('');
-    setPage(1);
+    if (inputSearchByPrice !== "" || inputSearchByName !== "" || inputSearchByBrand !== "") {
+      setIsLoaded(false);
+      setproductIDs(allProductsIDs);
+      setInputSearchByName('');
+      setInputSearchByPrice('');
+      setInputSearchByBrand('');
+      setPage(1);
+    }
+
   }
   return (
     <div className="row align-items-center">
       <div className="col-8">
-        <img src={companyLogo} className="img-fluid" alt="Responsive image" />
+        <img src={companyLogo} className="img-fluid" alt="Valantis" />
       </div>
       <div className="col-4">
         <div className="input-group mb-3">

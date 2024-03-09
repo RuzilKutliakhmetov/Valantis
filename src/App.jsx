@@ -89,18 +89,19 @@ function App() {
     getAllData();
   }, []);
 
+
+
   return (
     <div className='container bg-danger' >
       <Filter apiPassword={apiPassword} hashedPassword={hashedPassword} setproductIDs={setproductIDs} setIsLoaded={setIsLoaded} setError={setError} setPage={setPage} allProductsIDs={allProductsIDs} />
       {
         error ?
-          <p>Error {error.message}</p>
+          <p> Error: {error.message}</p>
           :
           !isLoaded ?
-            <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <div><span className="spinner-border spinner-border-sm" aria-hidden="true"></span> Loading...</div>
             :
             <div>
-              <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
               <Table products={products} setLimit={setLimit} setPage={setPage} page={page} limit={limit} limitPages={limitPages} />
             </div>
       }
